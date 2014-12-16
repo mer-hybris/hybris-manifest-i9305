@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- the create_default script will include the original manifest name here -->
+  <include name="cm-10.1.3.xml" />
+
+  <!-- Now to add our own remotes, remove the unwanted projects and add the extras -->
+  <remote  name="hybris" fetch="https://github.com" />
+
+  <remove-project path="build" name="CyanogenMod/android_build"/><!-- redefined later in this file -->
+  <remove-project path="android" name="CyanogenMod/android" />
+  <remove-project path="abi/cpp" name="CyanogenMod/android_abi_cpp" />
+  <remove-project path="bionic" name="CyanogenMod/android_bionic" /><!-- redefined later in this file -->
+  <remove-project path="bootable/diskinstaller" name="CyanogenMod/android_bootable_diskinstaller" />
+<!--   <project path="bootable/recovery" name="CyanogenMod/android_bootable_recovery" /> --> <!-- in keep.pathlist -->
+  <remove-project path="cts" name="platform/cts" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+  <remove-project path="dalvik" name="CyanogenMod/android_dalvik" />
+  <remove-project path="development" name="CyanogenMod/android_development" />
+<!--   <project path="device/common" name="CyanogenMod/android_device_common" /> --> <!-- in keep.pathlist -->
+<!--   <project path="device/generic/armv7-a-neon" name="CyanogenMod/android_device_generic_armv7-a-neon" /> --> <!-- matches re: ^device/.* -->
+<!--   <project path="device/generic/armv7-a" name="CyanogenMod/android_device_generic_armv7-a" /> --> <!-- matches re: ^device/.* -->
+<!--   <project path="device/generic/common" name="CyanogenMod/android_device_generic_common" /> --> <!-- in keep.pathlist -->
+<!--   <project path="device/generic/goldfish" name="CyanogenMod/android_device_generic_goldfish" /> --> <!-- matches re: ^device/.* -->
+<!--   <project path="device/generic/mips" name="CyanogenMod/android_device_generic_mips" /> --> <!-- matches re: ^device/.* -->
+<!--   <project path="device/generic/x86" name="CyanogenMod/android_device_generic_x86" /> --> <!-- matches re: ^device/.* -->
+<!--   <project path="device/google/accessory/arduino" name="CyanogenMod/android_device_google_accessory_arduino" groups="device" /> --> <!-- matches re: ^device/.* -->
+<!--   <project path="device/google/accessory/demokit" name="CyanogenMod/android_device_google_accessory_demokit" groups="device" /> --> <!-- matches re: ^device/.* -->
+<!--   <project path="device/sample" name="CyanogenMod/android_device_sample" groups="device" /> --> <!-- matches re: ^device/.* -->
+<!--   <project path="device/ti/panda" name="CyanogenMod/android_device_ti_panda" groups="device" /> --> <!-- matches re: ^device/.* -->
+  <remove-project path="docs/source.android.com" name="platform/docs/source.android.com" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+  <remove-project path="external/aac" name="CyanogenMod/android_external_aac" />
+  <remove-project path="external/android-clat" name="CyanogenMod/android_external_android-clat" />
+  <remove-project path="external/android-mock" name="CyanogenMod/android_external_android-mock" />
+  <remove-project path="external/ant-glob" name="CyanogenMod/android_external_ant-glob" />
+  <remove-project path="external/antlr" name="CyanogenMod/android_external_antlr" />
+  <remove-project path="external/apache-harmony" name="CyanogenMod/android_external_apache-harmony" />
+  <remove-project path="external/apache-http" name="CyanogenMod/android_external_apache-http" />
+  <remove-project path="external/apache-qp" name="CyanogenMod/android_external_apache-qp" />
+  <remove-project path="external/apache-xml" name="CyanogenMod/android_external_apache-xml" />
+  <remove-project path="external/arduino" name="CyanogenMod/android_external_arduino" />
+  <remove-project path="external/astl" name="CyanogenMod/android_external_astl" />
+  <remove-project path="external/bash" name="CyanogenMod/android_external_bash" />
+<!--   <project path="external/bison" name="CyanogenMod/android_external_bison" /> --> <!-- in keep.pathlist -->
+  <remove-project path="external/blktrace" name="CyanogenMod/android_external_blktrace" />
+  <remove-project path="external/bluetooth/bluedroid" name="CyanogenMod/android_external_bluetooth_bluedroid" />
+  <remove-project path="external/bouncycastle" name="CyanogenMod/android_external_bouncycastle" />
+  <remove-project path="external/bsdiff" name="CyanogenMod/android_external_bsdiff" />
+  <remove-project path="external/busybox" name="CyanogenMod/android_external_busybox" /><!-- redefined later in this file -->
+<!--   <project path="external/bzip2" name="CyanogenMod/android_external_bzip2" /> --> <!-- in keep.pathlist -->
+  <remove-project path="external/checkpolicy" name="CyanogenMod/android_external_checkpolicy" />
+  <remove-project path="external/chromium" name="CyanogenMod/android_external_chromium" />
+  <remove-project path="external/chromium-trace" name="CyanogenMod/android_external_chromium-trace" />
+  <remove-project path="external/cibu-fonts" name="CyanogenMod/android_external_cibu-fonts" />
+<!--   <project path="external/clang" name="CyanogenMod/android_external_clang" /> --> <!-- in keep.pathlist -->
+<!--   <project path="external/compiler-rt" name="CyanogenMod/android_external_compiler-rt" /> --> <!-- in keep.pathlist -->
+  <remove-project path="external/dbus" name="CyanogenMod/android_external_dbus" />
+  <remove-project path="external/dexmaker" name="CyanogenMod/android_external_dexmaker" />
+  <remove-project path="external/dhcpcd" name="CyanogenMod/android_external_dhcpcd" />
+  <remove-project path="external/dnsmasq" name="CyanogenMod/android_external_dnsmasq" />
+  <remove-project path="external/doclava" name="CyanogenMod/android_external_doclava" />
+  <remove-project path="external/dropbear" name="CyanogenMod/android_external_dropbear" />
+  <remove-project path="external/e2fsprogs" name="CyanogenMod/android_external_e2fsprogs" />
+  <remove-project path="external/easymock" name="CyanogenMod/android_external_easymock" />
+  <remove-project path="external/eclipse-basebuilder" name="CyanogenMod/android_external_eclipse-basebuilder" />
+  <remove-project path="external/eclipse-windowbuilder" name="CyanogenMod/android_external_eclipse-windowbuilder" />
+  <remove-project path="external/elfutils" name="CyanogenMod/android_external_elfutils" />
+  <remove-project path="external/embunit" name="CyanogenMod/android_external_embunit" />
+  <remove-project path="external/emma" name="CyanogenMod/android_external_emma" />
+  <remove-project path="external/esd" name="CyanogenMod/android_external_esd" />
+  <remove-project path="external/exfat" name="CyanogenMod/android_external_exfat" />
+<!--   <project path="external/expat" name="CyanogenMod/android_external_expat" /> --> <!-- in keep.pathlist -->
+  <remove-project path="external/eyes-free" name="CyanogenMod/android_external_eyes-free" />
+  <remove-project path="external/fat32lib" name="CyanogenMod/android_external_fat32lib" />
+  <remove-project path="external/fdlibm" name="CyanogenMod/android_external_fdlibm" />
+  <remove-project path="external/flac" name="CyanogenMod/android_external_flac" />
+<!--   <project path="external/freetype" name="CyanogenMod/android_external_freetype" /> --> <!-- in keep.pathlist -->
+  <remove-project path="external/fsck_msdos" name="CyanogenMod/android_external_fsck_msdos" />
+  <remove-project path="external/fuse" name="CyanogenMod/android_external_fuse" />
+  <remove-project path="external/ganymed-ssh2" name="CyanogenMod/android_external_ganymed-ssh2" />
+<!--   <project path="external/gcc-demangle" name="CyanogenMod/android_external_gcc-demangle" /> --> <!-- in keep.pathlist -->
+<!--   <project path="external/genext2fs" name="CyanogenMod/android_external_genext2fs" /> --> <!-- in keep.pathlist -->
+<!--   <project path="external/giflib" name="CyanogenMod/android_external_giflib" /> --> <!-- in keep.pathlist -->
+  <remove-project path="external/google" name="CyanogenMod/android_external_google" />
+  <remove-project path="external/google-diff-match-patch" name="CyanogenMod/android_external_google-diff-match-patch" />
+  <remove-project path="external/grub" name="CyanogenMod/android_external_grub" />
+  <remove-project path="external/gson" name="CyanogenMod/android_external_gson" />
+  <remove-project path="external/gtest" name="CyanogenMod/android_external_gtest" />
+  <remove-project path="external/guava" name="CyanogenMod/android_external_guava" />
+  <remove-project path="external/hamcrest" name="CyanogenMod/android_external_hamcrest" />
+<!--   <project path="external/harfbuzz" name="CyanogenMod/android_external_harfbuzz" /> --> <!-- in keep.pathlist -->
+  <remove-project path="external/heimdall" name="CyanogenMod/android_external_heimdall" />
+  <remove-project path="external/htop" name="CyanogenMod/android_external_htop" />
+  <remove-project path="external/hyphenation" name="CyanogenMod/android_external_hyphenation" />
+  <remove-project path="external/icu4c" name="CyanogenMod/android_external_icu4c" />
+  <remove-project path="external/iproute2" name="CyanogenMod/android_external_iproute2" />
+  <remove-project path="external/ipsec-tools" name="CyanogenMod/android_external_ipsec-tools" />
+  <remove-project path="external/iptables" name="CyanogenMod/android_external_iptables" />
+  <remove-project path="external/jack" name="CyanogenMod/android_external_jack" />
+  <remove-project path="external/javasqlite" name="CyanogenMod/android_external_javasqlite" />
+  <remove-project path="external/javassist" name="CyanogenMod/android_external_javassist" />
+  <remove-project path="external/jdiff" name="CyanogenMod/android_external_jdiff" />
+  <remove-project path="external/jhead" name="CyanogenMod/android_external_jhead" />
+  <remove-project path="external/jmdns" name="CyanogenMod/android_external_jmdns" />
+  <remove-project path="external/jmonkeyengine" name="CyanogenMod/android_external_jmonkeyengine" />
+<!--   <project path="external/jpeg" name="CyanogenMod/android_external_jpeg" /> --> <!-- in keep.pathlist -->
+  <remove-project path="external/jsilver" name="CyanogenMod/android_external_jsilver" />
+  <remove-project path="external/jsr305" name="CyanogenMod/android_external_jsr305" />
+  <remove-project path="external/junit" name="CyanogenMod/android_external_junit" />
+<!--   <project path="external/kernel-headers" name="CyanogenMod/android_external_kernel-headers" /> --> <!-- in keep.pathlist -->
+  <remove-project path="external/koush/Superuser" name="CyanogenMod/Superuser" />
+  <remove-project path="external/koush/Widgets" name="CyanogenMod/Widgets" />
+  <remove-project path="external/libcap-ng" name="CyanogenMod/android_external_libcap-ng" />
+  <remove-project path="external/libffi" name="CyanogenMod/android_external_libffi" />
+  <remove-project path="external/libgsm" name="CyanogenMod/android_external_libgsm" />
+  <remove-project path="external/liblzf" name="CyanogenMod/android_external_liblzf" /><!-- redefined later in this file -->
+  <remove-project path="external/libmtp" name="CyanogenMod/android_external_libmtp" />
+  <remove-project path="external/libncurses" name="CyanogenMod/android_external_libncurses" />
+  <remove-project path="external/libnfc-nci" name="CyanogenMod/android_external_libnfc-nci" />
+<!--   <project path="external/libnfc-nxp" name="CyanogenMod/android_external_libnfc-nxp" /> --> <!-- in keep.pathlist -->
+  <remove-project path="external/libnl-headers" name="CyanogenMod/android_external_libnl-headers" />
+  <remove-project path="external/libogg" name="CyanogenMod/android_external_libogg" />
+  <remove-project path="external/libpcap" name="CyanogenMod/android_external_libpcap" />
+  <remove-project path="external/libphonenumber" name="CyanogenMod/android_external_libphonenumber" />
+<!--   <project path="external/libpng" name="CyanogenMod/android_external_libpng" /> --> <!-- in keep.pathlist -->
+  <remove-project path="external/libppp" name="CyanogenMod/android_external_libppp" />
+<!--   <project path="external/libselinux" name="CyanogenMod/android_external_libselinux" /> --> <!-- in keep.pathlist -->
+  <remove-project path="external/libsepol" name="CyanogenMod/android_external_libsepol" />
+  <remove-project path="external/libusb" name="CyanogenMod/android_external_libusb" />
+  <remove-project path="external/libusb-compat" name="CyanogenMod/android_external_libusb-compat" />
+  <remove-project path="external/libvorbis" name="CyanogenMod/android_external_libvorbis" />
+  <remove-project path="external/libvpx" name="CyanogenMod/android_external_libvpx" />
+  <remove-project path="external/libxml2" name="CyanogenMod/android_external_libxml2" />
+  <remove-project path="external/libxslt" name="CyanogenMod/android_external_libxslt" />
+  <remove-project path="external/libyuv" name="CyanogenMod/android_external_libyuv" />
+  <remove-project path="external/linux-tools-perf" name="CyanogenMod/android_external_linux-tools-perf" />
+  <remove-project path="external/littlemock" name="CyanogenMod/android_external_littlemock" />
+<!--   <project path="external/llvm" name="CyanogenMod/android_external_llvm" /> --> <!-- in keep.pathlist -->
+  <remove-project path="external/lohit-fonts" name="CyanogenMod/android_external_lohit-fonts" />
+  <remove-project path="external/lsof" name="CyanogenMod/android_external_lsof" />
+  <remove-project path="external/lzo" name="CyanogenMod/android_external_lzo" />
+  <remove-project path="external/markdown" name="CyanogenMod/android_external_markdown" />
+  <remove-project path="external/mdnsresponder" name="CyanogenMod/android_external_mdnsresponder" />
+  <remove-project path="external/mesa3d" name="CyanogenMod/android_external_mesa3d" />
+  <remove-project path="external/mksh" name="CyanogenMod/android_external_mksh" />
+  <remove-project path="external/mockwebserver" name="CyanogenMod/android_external_mockwebserver" />
+  <remove-project path="external/mp4parser" name="CyanogenMod/android_external_mp4parser" />
+  <remove-project path="external/mtpd" name="CyanogenMod/android_external_mtpd" />
+  <remove-project path="external/nano" name="CyanogenMod/android_external_nano" />
+  <remove-project path="external/naver-fonts" name="CyanogenMod/android_external_naver-fonts" />
+  <remove-project path="external/netcat" name="CyanogenMod/android_external_netcat" />
+  <remove-project path="external/netperf" name="CyanogenMod/android_external_netperf" />
+  <remove-project path="external/neven" name="CyanogenMod/android_external_neven" />
+  <remove-project path="external/nist-sip" name="CyanogenMod/android_external_nist-sip" />
+  <remove-project path="external/ntfs-3g" name="CyanogenMod/android_external_ntfs-3g" />
+  <remove-project path="external/oauth" name="CyanogenMod/android_external_oauth" />
+  <remove-project path="external/okhttp" name="CyanogenMod/android_external_okhttp" />
+  <remove-project path="external/opencv" name="CyanogenMod/android_external_opencv" />
+  <remove-project path="external/openfst" name="CyanogenMod/android_external_openfst" />
+  <remove-project path="external/openssh" name="CyanogenMod/android_external_openssh" />
+<!--   <project path="external/openssl" name="CyanogenMod/android_external_openssl" /> --> <!-- in keep.pathlist -->
+  <remove-project path="external/openvpn" name="CyanogenMod/android_external_openvpn" />
+  <remove-project path="external/oprofile" name="CyanogenMod/android_external_oprofile" />
+  <remove-project path="external/ping" name="CyanogenMod/android_external_ping" />
+  <remove-project path="external/ping6" name="CyanogenMod/android_external_ping6" />
+  <remove-project path="external/powertop" name="CyanogenMod/android_external_powertop" />
+  <remove-project path="external/ppp" name="CyanogenMod/android_external_ppp" />
+  <remove-project path="external/proguard" name="CyanogenMod/android_external_proguard" />
+  <remove-project path="external/protobuf" name="CyanogenMod/android_external_protobuf" /><!-- redefined later in this file -->
+<!--   <project path="external/qemu" name="CyanogenMod/android_external_qemu" /> --> <!-- in keep.pathlist -->
+  <remove-project path="external/qemu-pc-bios" name="CyanogenMod/android_external_qemu-pc-bios" />
+  <remove-project path="external/qrngd" name="CyanogenMod/android_external_qrngd" />
+  <remove-project path="external/quake" name="CyanogenMod/android_external_quake" />
+  <remove-project path="external/regex-re2" name="CyanogenMod/android_external_regex-re2" />
+  <remove-project path="external/replicaisland" name="CyanogenMod/android_external_replicaisland" />
+  <remove-project path="external/rsync" name="CyanogenMod/android_external_rsync" />
+<!--   <project path="external/safe-iop" name="CyanogenMod/android_external_safe-iop" /> --> <!-- in keep.pathlist -->
+  <remove-project path="external/sepolicy" name="CyanogenMod/android_external_sepolicy" />
+<!--   <project path="external/skia" name="CyanogenMod/android_external_skia" /> --> <!-- in keep.pathlist -->
+  <remove-project path="external/smali" name="CyanogenMod/android_external_smali" />
+  <remove-project path="external/sonivox" name="CyanogenMod/android_external_sonivox" />
+  <remove-project path="external/speex" name="CyanogenMod/android_external_speex" />
+  <remove-project path="external/spongycastle" name="CyanogenMod/android_external_spongycastle" />
+  <remove-project path="external/sqlite" name="CyanogenMod/android_external_sqlite" />
+  <remove-project path="external/srec" name="CyanogenMod/android_external_srec" />
+  <remove-project path="external/srtp" name="CyanogenMod/android_external_srtp" />
+<!--   <project path="external/stlport" name="CyanogenMod/android_external_stlport" /> --> <!-- in keep.pathlist -->
+  <remove-project path="external/strace" name="CyanogenMod/android_external_strace" />
+  <remove-project path="external/stressapptest" name="CyanogenMod/android_external_stressapptest" />
+  <remove-project path="external/svox" name="CyanogenMod/android_external_svox" />
+  <remove-project path="external/tagsoup" name="CyanogenMod/android_external_tagsoup" />
+  <remove-project path="external/tcpdump" name="CyanogenMod/android_external_tcpdump" />
+  <remove-project path="external/tinyalsa" name="CyanogenMod/android_external_tinyalsa" />
+  <remove-project path="external/tinyxml" name="CyanogenMod/android_external_tinyxml" />
+  <remove-project path="external/tinyxml2" name="CyanogenMod/android_external_tinyxml2" />
+  <remove-project path="external/tremolo" name="CyanogenMod/android_external_tremolo" />
+  <remove-project path="external/v8" name="CyanogenMod/android_external_v8" />
+  <remove-project path="external/valgrind" name="CyanogenMod/android_external_valgrind" />
+  <remove-project path="external/vim" name="CyanogenMod/android_external_vim" />
+  <remove-project path="external/webkit" name="CyanogenMod/android_external_webkit" />
+<!--   <project path="external/webp" name="CyanogenMod/android_external_webp" /> --> <!-- in keep.pathlist -->
+  <remove-project path="external/webrtc" name="CyanogenMod/android_external_webrtc" />
+  <remove-project path="external/wpa_supplicant_6" name="CyanogenMod/android_external_wpa_supplicant_6" />
+  <remove-project path="external/wpa_supplicant_8" name="CyanogenMod/android_external_wpa_supplicant_8" />
+  <remove-project path="external/wpa_supplicant_8_ti" name="CyanogenMod/android_external_wpa_supplicant_8_ti" />
+  <remove-project path="external/xmlwriter" name="CyanogenMod/android_external_xmlwriter" />
+  <remove-project path="external/xmp_toolkit" name="CyanogenMod/android_external_xmp_toolkit" />
+<!--   <project path="external/yaffs2" name="CyanogenMod/android_external_yaffs2" /> --> <!-- in keep.pathlist -->
+<!--   <project path="external/zlib" name="CyanogenMod/android_external_zlib" /> --> <!-- in keep.pathlist -->
+  <remove-project path="external/zxing" name="CyanogenMod/android_external_zxing" />
+  <remove-project path="frameworks/av" name="CyanogenMod/android_frameworks_av" />
+  <remove-project path="frameworks/base" name="CyanogenMod/android_frameworks_base" /><!-- redefined later in this file -->
+  <remove-project path="frameworks/compile/libbcc" name="CyanogenMod/android_frameworks_compile_libbcc" />
+  <remove-project path="frameworks/compile/linkloader" name="CyanogenMod/android_frameworks_compile_linkloader" />
+  <remove-project path="frameworks/compile/llvm-ndk-cc" name="CyanogenMod/android_frameworks_compile_llvm-ndk-cc" />
+  <remove-project path="frameworks/compile/mclinker" name="CyanogenMod/android_frameworks_compile_mclinker" />
+  <remove-project path="frameworks/compile/slang" name="CyanogenMod/android_frameworks_compile_slang" />
+  <remove-project path="frameworks/ex" name="CyanogenMod/android_frameworks_ex" />
+  <remove-project path="frameworks/mff" name="CyanogenMod/android_frameworks_mff" />
+  <remove-project path="frameworks/ml" name="CyanogenMod/android_frameworks_ml" />
+<!--   <project path="frameworks/native" name="CyanogenMod/android_frameworks_native" /> --> <!-- in keep.pathlist -->
+  <remove-project path="frameworks/opt/calendar" name="CyanogenMod/android_frameworks_opt_calendar" />
+  <remove-project path="frameworks/opt/carddav" name="CyanogenMod/android_frameworks_opt_carddav" />
+<!--   <project path="frameworks/opt/emoji" name="CyanogenMod/android_frameworks_opt_emoji" /> --> <!-- in keep.pathlist -->
+  <remove-project path="frameworks/opt/inputmethodcommon" name="CyanogenMod/android_frameworks_opt_inputmethodcommon" />
+  <remove-project path="frameworks/opt/mailcommon" name="CyanogenMod/android_frameworks_opt_mailcommon" />
+  <remove-project path="frameworks/opt/mms" name="CyanogenMod/android_frameworks_opt_mms" />
+  <remove-project path="frameworks/opt/photoviewer" name="CyanogenMod/android_frameworks_opt_photoviewer" />
+  <remove-project path="frameworks/opt/telephony" name="CyanogenMod/android_frameworks_opt_telephony" />
+  <remove-project path="frameworks/opt/vcard" name="CyanogenMod/android_frameworks_opt_vcard" />
+  <remove-project path="frameworks/rs" name="CyanogenMod/android_frameworks_rs" />
+  <remove-project path="frameworks/support" name="CyanogenMod/android_frameworks_support" />
+  <remove-project path="frameworks/testing" name="CyanogenMod/android_frameworks_testing" />
+  <remove-project path="frameworks/wilhelm" name="CyanogenMod/android_frameworks_wilhelm" />
+  <remove-project path="gdk" name="platform/gdk" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+<!--   <project path="hardware/broadcom/wlan" name="CyanogenMod/android_hardware_broadcom_wlan" /> --> <!-- matches re: ^hardware/.* -->
+<!--   <project path="hardware/cm" name="CyanogenMod/android_hardware_cm" /> --> <!-- matches re: ^hardware/.* -->
+<!--   <project path="hardware/invensense" name="CyanogenMod/android_hardware_invensense" /> --> <!-- matches re: ^hardware/.* -->
+<!--   <project path="hardware/libhardware" name="CyanogenMod/android_hardware_libhardware" /> --> <!-- in keep.pathlist -->
+<!--   <project path="hardware/libhardware_legacy" name="CyanogenMod/android_hardware_libhardware_legacy" /> --> <!-- in keep.pathlist -->
+<!--   <project path="hardware/msm7k" name="CyanogenMod/android_hardware_msm7k" /> --> <!-- matches re: ^hardware/.* -->
+<!--   <project path="hardware/qcom/audio" name="CyanogenMod/android_hardware_qcom_audio" /> --> <!-- matches re: ^hardware/.* -->
+<!--   <project path="hardware/qcom/audio-caf" name="CyanogenMod/android_hardware_qcom_audio-caf" /> --> <!-- matches re: ^hardware/.* -->
+<!--   <project path="hardware/qcom/bt" name="CyanogenMod/android_hardware_qcom_bt" /> --> <!-- matches re: ^hardware/.* -->
+<!--   <project path="hardware/qcom/camera" name="CyanogenMod/android_hardware_qcom_camera" /> --> <!-- matches re: ^hardware/.* -->
+<!--   <project path="hardware/qcom/display" name="CyanogenMod/android_hardware_qcom_display" /> --> <!-- matches re: ^hardware/.* -->
+<!--   <project path="hardware/qcom/display-caf" name="CyanogenMod/android_hardware_qcom_display-caf" /> --> <!-- matches re: ^hardware/.* -->
+<!--   <project path="hardware/qcom/gps" name="CyanogenMod/android_hardware_qcom_gps" /> --> <!-- matches re: ^hardware/.* -->
+<!--   <project path="hardware/qcom/keymaster" name="CyanogenMod/android_hardware_qcom_keymaster" /> --> <!-- matches re: ^hardware/.* -->
+<!--   <project path="hardware/qcom/media" name="CyanogenMod/android_hardware_qcom_media" /> --> <!-- matches re: ^hardware/.* -->
+<!--   <project path="hardware/qcom/media-caf" name="CyanogenMod/android_hardware_qcom_media-caf" /> --> <!-- matches re: ^hardware/.* -->
+<!--   <project path="hardware/qcom/msm8960" name="CyanogenMod/android_hardware_qcom_msm8960" /> --> <!-- matches re: ^hardware/.* -->
+<!--   <project path="hardware/qcom/power" name="CyanogenMod/android_hardware_qcom_power" /> --> <!-- matches re: ^hardware/.* -->
+<!--   <project path="hardware/qcom/sensors" name="CyanogenMod/android_hardware_qcom_sensors" /> --> <!-- matches re: ^hardware/.* -->
+<!--   <project path="hardware/qcom/wlan" name="CyanogenMod/android_hardware_qcom_wlan" /> --> <!-- matches re: ^hardware/.* -->
+  <remove-project path="hardware/ril" name="CyanogenMod/android_hardware_ril" /><!-- redefined later in this file -->
+<!--   <project path="hardware/samsung_slsi/exynos5" name="CyanogenMod/android_hardware_samsung_slsi_exynos5" /> --> <!-- matches re: ^hardware/.* -->
+<!--   <project path="hardware/ti/omap3" name="CyanogenMod/android_hardware_ti_omap3" /> --> <!-- matches re: ^hardware/.* -->
+<!--   <project path="hardware/ti/omap4xxx" name="CyanogenMod/android_hardware_ti_omap4xxx" /> --> <!-- matches re: ^hardware/.* -->
+<!--   <project path="hardware/ti/wlan" name="CyanogenMod/android_hardware_ti_wlan" /> --> <!-- matches re: ^hardware/.* -->
+<!--   <project path="hardware/ti/wpan" name="CyanogenMod/android_hardware_ti_wpan" /> --> <!-- matches re: ^hardware/.* -->
+  <remove-project path="libcore" name="CyanogenMod/android_libcore" /><!-- redefined later in this file -->
+  <remove-project path="libnativehelper" name="CyanogenMod/android_libnativehelper" />
+  <remove-project path="ndk" name="platform/ndk" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+  <remove-project path="packages/apps/Apollo" name="CyanogenMod/android_packages_apps_Apollo" />
+  <remove-project path="packages/apps/BasicSmsReceiver" name="CyanogenMod/android_packages_apps_BasicSmsReceiver" />
+  <remove-project path="packages/apps/Bluetooth" name="CyanogenMod/android_packages_apps_Bluetooth" />
+  <remove-project path="packages/apps/Browser" name="CyanogenMod/android_packages_apps_Browser" />
+  <remove-project path="packages/apps/Calculator" name="CyanogenMod/android_packages_apps_Calculator" />
+  <remove-project path="packages/apps/Calendar" name="CyanogenMod/android_packages_apps_Calendar" />
+  <remove-project path="packages/apps/Camera" name="CyanogenMod/android_packages_apps_Camera" />
+  <remove-project path="packages/apps/CellBroadcastReceiver" name="CyanogenMod/android_packages_apps_CellBroadcastReceiver" />
+  <remove-project path="packages/apps/CertInstaller" name="CyanogenMod/android_packages_apps_CertInstaller" />
+  <remove-project path="packages/apps/CMFileManager" name="CyanogenMod/android_packages_apps_CMFileManager" />
+  <remove-project path="packages/apps/CMAccount" name="CyanogenMod/android_packages_apps_CMAccount" />
+  <remove-project path="packages/apps/CMUpdater" name="CyanogenMod/android_packages_apps_CMUpdater" />
+  <remove-project path="packages/apps/CMWallpapers" name="CyanogenMod/android_packages_apps_CMWallpapers" />
+  <remove-project path="packages/apps/Contacts" name="CyanogenMod/android_packages_apps_Contacts" />
+  <remove-project path="packages/apps/DeskClock" name="CyanogenMod/android_packages_apps_DeskClock" />
+  <remove-project path="packages/apps/DSPManager" name="CyanogenMod/android_packages_apps_DSPManager" />
+  <remove-project path="packages/apps/Email" name="CyanogenMod/android_packages_apps_Email" />
+  <remove-project path="packages/apps/Exchange" name="CyanogenMod/android_packages_apps_Exchange" />
+  <remove-project path="packages/apps/Gallery" name="CyanogenMod/android_packages_apps_Gallery" />
+  <remove-project path="packages/apps/Gallery2" name="CyanogenMod/android_packages_apps_Gallery2" />
+  <remove-project path="packages/apps/HTMLViewer" name="CyanogenMod/android_packages_apps_HTMLViewer" />
+  <remove-project path="packages/apps/KeyChain" name="CyanogenMod/android_packages_apps_KeyChain" />
+  <remove-project path="packages/apps/Launcher2" name="CyanogenMod/android_packages_apps_Launcher2" />
+  <remove-project path="packages/apps/LegacyCamera" name="CyanogenMod/android_packages_apps_LegacyCamera" />
+  <remove-project path="packages/apps/LockClock" name="CyanogenMod/android_packages_apps_LockClock" />
+  <remove-project path="packages/apps/Mms" name="CyanogenMod/android_packages_apps_Mms" />
+  <remove-project path="packages/apps/Music" name="CyanogenMod/android_packages_apps_Music" />
+  <remove-project path="packages/apps/MusicFX" name="CyanogenMod/android_packages_apps_MusicFX" />
+  <remove-project path="packages/apps/Nfc" name="CyanogenMod/android_packages_apps_Nfc" />
+  <remove-project path="packages/apps/PackageInstaller" name="CyanogenMod/android_packages_apps_PackageInstaller" />
+  <remove-project path="packages/apps/Phone" name="CyanogenMod/android_packages_apps_Phone" />
+  <remove-project path="packages/apps/Protips" name="CyanogenMod/android_packages_apps_Protips" />
+  <remove-project path="packages/apps/Provision" name="CyanogenMod/android_packages_apps_Provision" />
+  <remove-project path="packages/apps/QuickSearchBox" name="CyanogenMod/android_packages_apps_QuickSearchBox" />
+  <remove-project path="packages/apps/Settings" name="CyanogenMod/android_packages_apps_Settings" />
+  <remove-project path="packages/apps/SmartCardService" name="CyanogenMod/android_packages_apps_SmartCardService" />
+  <remove-project path="packages/apps/SoundRecorder" name="CyanogenMod/android_packages_apps_SoundRecorder" />
+  <remove-project path="packages/apps/SpareParts" name="CyanogenMod/android_packages_apps_SpareParts" />
+  <remove-project path="packages/apps/SpeechRecorder" name="CyanogenMod/android_packages_apps_SpeechRecorder" />
+  <remove-project path="packages/apps/Stk" name="CyanogenMod/android_packages_apps_Stk" />
+  <remove-project path="packages/apps/Tag" name="CyanogenMod/android_packages_apps_Tag" />
+  <remove-project path="packages/apps/Torch" name="CyanogenMod/android_packages_apps_Torch" />
+  <remove-project path="packages/apps/Trebuchet" name="CyanogenMod/android_packages_apps_Trebuchet" />
+  <remove-project path="packages/apps/VideoEditor" name="CyanogenMod/android_packages_apps_VideoEditor" />
+  <remove-project path="packages/apps/VoiceDialer" name="CyanogenMod/android_packages_apps_VoiceDialer" />
+  <remove-project path="packages/experimental" name="CyanogenMod/android_packages_experimental" />
+  <remove-project path="packages/inputmethods/LatinIME" name="CyanogenMod/android_packages_inputmethods_LatinIME" />
+  <remove-project path="packages/inputmethods/OpenWnn" name="CyanogenMod/android_packages_inputmethods_OpenWnn" />
+  <remove-project path="packages/inputmethods/PinyinIME" name="CyanogenMod/android_packages_inputmethods_PinyinIME" />
+  <remove-project path="packages/providers/ApplicationsProvider" name="CyanogenMod/android_packages_providers_ApplicationsProvider" />
+  <remove-project path="packages/providers/CalendarProvider" name="CyanogenMod/android_packages_providers_CalendarProvider" />
+  <remove-project path="packages/providers/ContactsProvider" name="CyanogenMod/android_packages_providers_ContactsProvider" />
+  <remove-project path="packages/providers/DownloadProvider" name="CyanogenMod/android_packages_providers_DownloadProvider" />
+  <remove-project path="packages/providers/DrmProvider" name="CyanogenMod/android_packages_providers_DrmProvider" />
+  <remove-project path="packages/providers/MediaProvider" name="CyanogenMod/android_packages_providers_MediaProvider" />
+  <remove-project path="packages/providers/PartnerBookmarksProvider" name="CyanogenMod/android_packages_providers_PartnerBookmarksProvider" />
+  <remove-project path="packages/providers/TelephonyProvider" name="CyanogenMod/android_packages_providers_TelephonyProvider" />
+  <remove-project path="packages/providers/UserDictionaryProvider" name="CyanogenMod/android_packages_providers_UserDictionaryProvider" />
+  <remove-project path="packages/screensavers/Basic" name="CyanogenMod/android_packages_screensavers_Basic" />
+  <remove-project path="packages/screensavers/PhotoTable" name="CyanogenMod/android_packages_screensavers_PhotoTable" />
+  <remove-project path="packages/screensavers/WebView" name="CyanogenMod/android_packages_screensavers_WebView" />
+  <remove-project path="packages/wallpapers/Basic" name="CyanogenMod/android_packages_wallpapers_Basic" />
+  <remove-project path="packages/wallpapers/Galaxy4" name="CyanogenMod/android_packages_wallpapers_Galaxy4" />
+  <remove-project path="packages/wallpapers/HoloSpiral" name="CyanogenMod/android_packages_wallpapers_HoloSpiral" />
+  <remove-project path="packages/wallpapers/LivePicker" name="CyanogenMod/android_packages_wallpapers_LivePicker" />
+  <remove-project path="packages/wallpapers/MagicSmoke" name="CyanogenMod/android_packages_wallpapers_MagicSmoke" />
+  <remove-project path="packages/wallpapers/MusicVisualization" name="CyanogenMod/android_packages_wallpapers_MusicVisualization" />
+  <remove-project path="packages/wallpapers/NoiseField" name="CyanogenMod/android_packages_wallpapers_NoiseField" />
+  <remove-project path="packages/wallpapers/PhaseBeam" name="CyanogenMod/android_packages_wallpapers_PhaseBeam" />
+  <remove-project path="pdk" name="platform/pdk" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+  <remove-project path="prebuilt" name="CyanogenMod/android_prebuilt" />
+  <remove-project path="prebuilts/clang/darwin-x86/3.1" name="platform/prebuilts/clang/darwin-x86/3.1" groups="darwin" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+  <remove-project path="prebuilts/clang/darwin-x86/3.2" name="platform/prebuilts/clang/darwin-x86/3.2" groups="darwin" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+  <remove-project path="prebuilts/clang/linux-x86/3.1" name="platform/prebuilts/clang/linux-x86/3.1" groups="linux" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+  <remove-project path="prebuilts/clang/linux-x86/3.2" name="platform/prebuilts/clang/linux-x86/3.2" groups="linux" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+  <remove-project path="prebuilts/eclipse" name="platform/prebuilts/eclipse" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+  <remove-project path="prebuilts/gcc/darwin-x86/arm/arm-eabi-4.6" name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.6" groups="darwin,arm" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+  <remove-project path="prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.6" name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.6" groups="darwin,arm" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+  <remove-project path="prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.6" name="platform/prebuilts/gcc/darwin-x86/mips/mipsel-linux-android-4.6" groups="darwin,mips" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+  <remove-project path="prebuilts/gcc/darwin-x86/x86/i686-linux-android-4.6" name="platform/prebuilts/gcc/darwin-x86/x86/i686-linux-android-4.6" groups="darwin,x86" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+<!--   <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.6" name="platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6" groups="linux,arm" remote="aosp" revision="refs/tags/android-4.2.2_r1" /> --> <!-- in keep.pathlist -->
+<!--   <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6" groups="linux,arm" remote="aosp" revision="refs/tags/android-4.2.2_r1" /> --> <!-- in keep.pathlist -->
+<!--   <project path="prebuilts/gcc/linux-x86/host/i686-linux-glibc2.7-4.4.3" name="platform/prebuilts/gcc/linux-x86/host/i686-linux-glibc2.7-4.4.3" groups="linux" remote="aosp" revision="refs/tags/android-4.2.2_r1" /> --> <!-- in keep.pathlist -->
+<!--   <project path="prebuilts/gcc/linux-x86/host/i686-linux-glibc2.7-4.6" name="platform/prebuilts/gcc/linux-x86/host/i686-linux-glibc2.7-4.6" groups="linux" remote="aosp" revision="refs/tags/android-4.2.2_r1" /> --> <!-- in keep.pathlist -->
+<!--   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.7-4.6" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.7-4.6" groups="linux" remote="aosp" revision="refs/tags/android-4.2.2_r1" /> --> <!-- in keep.pathlist -->
+  <remove-project path="prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.6" name="platform/prebuilts/gcc/linux-x86/mips/mipsel-linux-android-4.6" groups="linux,mips" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+<!--   <project path="prebuilts/gcc/linux-x86/x86/i686-linux-android-4.6" name="platform/prebuilts/gcc/linux-x86/x86/i686-linux-android-4.6" groups="linux,x86" remote="aosp" revision="refs/tags/android-4.2.2_r1" /> --> <!-- in keep.pathlist -->
+<!--   <project path="prebuilts/misc" name="platform/prebuilts/misc" remote="aosp" revision="refs/tags/android-4.2.2_r1" /> --> <!-- in keep.pathlist -->
+<!--   <project path="prebuilts/ndk" name="platform/prebuilts/ndk" remote="aosp" revision="refs/tags/android-4.2.2_r1" /> --> <!-- in keep.pathlist -->
+  <remove-project path="prebuilts/qemu-kernel" name="platform/prebuilts/qemu-kernel" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+<!--   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" remote="aosp" revision="refs/tags/android-4.2.2_r1" /> --> <!-- in keep.pathlist -->
+<!--   <project path="prebuilts/tools" name="platform/prebuilts/tools" remote="aosp" revision="refs/tags/android-4.2.2_r1" /> --> <!-- in keep.pathlist -->
+  <remove-project path="sdk" name="CyanogenMod/android_sdk" />
+  <remove-project path="system/bluetooth" name="CyanogenMod/android_system_bluetooth" />
+  <remove-project path="system/core" name="CyanogenMod/android_system_core" /><!-- redefined later in this file -->
+<!--   <project path="system/extras" name="CyanogenMod/android_system_extras" /> --> <!-- in keep.pathlist -->
+  <remove-project path="system/media" name="CyanogenMod/android_system_media" />
+  <remove-project path="system/netd" name="CyanogenMod/android_system_netd" />
+  <remove-project path="system/security" name="CyanogenMod/android_system_security" />
+  <remove-project path="system/vold" name="CyanogenMod/android_system_vold" />
+  <remove-project path="tools/build" name="platform/tools/build" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+  <remove-project path="tools/motodev" name="platform/tools/motodev" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
+<!--   <project path="vendor/cm" name="CyanogenMod/android_vendor_cm" /> --> <!-- matches re: ^vendor/.* -->
+<!--   <project path="vendor/qcom/opensource/v8" name="CyanogenMod/android_vendor_qcom_opensource_v8" /> --> <!-- matches re: ^vendor/.* -->
+<!--   <project path="vendor/tmobile/apps/ThemeChooser" name="CyanogenMod/themes-platform-vendor-tmobile-apps-ThemeChooser" /> --> <!-- matches re: ^vendor/.* -->
+<!--   <project path="vendor/tmobile/libs/com.tmobile.themes" name="CyanogenMod/android_vendor_tmobile_libs_com.tmobile.themes" /> --> <!-- matches re: ^vendor/.* -->
+<!--   <project path="vendor/tmobile/providers/ThemeManager" name="CyanogenMod/android_vendor_tmobile_providers_ThemeManager" /> --> <!-- matches re: ^vendor/.* -->
+<!--   <project path="vendor/tmobile/products/themes" name="CyanogenMod/android_vendor_tmobile_products_themes" /> --> <!-- matches re: ^vendor/.* -->
+
+<!-- Hybris extras -->
+  <project path="hybris/hybris-boot" name="lbt/hybris-boot" remote="hybris" revision="hybris-10.1.3"/>
+  <project path="hybris/mer-kernel-check" name="lbt/mer-kernel-check" remote="hybris" revision="master"/>
+  <project path="hybris/overrides/kernel" name="lbt/nuc-kernel-overrides" remote="hybris" revision="master"/>
+
+<!-- Hybris overrides -->
+  <project path="build" name="lbt/android_build" remote="hybris" revision="hybris-10.1.3" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+  </project>
+  <project path="bionic" name="lbt/android_bionic" remote="hybris" revision="hybris-10.1.3"/>
+  <project path="libcore" name="lbt/android_libcore" remote="hybris" revision="hybris-10.1.3"/>
+  <project path="system/core" name="lbt/android_system_core" remote="hybris" revision="hybris-10.1.3"/>
+  <project path="hardware/ril" name="lbt/android_hardware_ril" remote="hybris" revision="hybris-10.1.3"/>
+  <project path="external/busybox" name="lbt/android_external_busybox" remote="hybris" revision="hybris-10.1.3"/>
+  <project path="external/protobuf" name="lbt/android_external_protobuf" remote="hybris" revision="hybris-10.1.3"/>
+  <project path="external/liblzf" name="lbt/android_external_liblzf" remote="hybris" revision="hybris-10.1.3"/>
+  <project path="frameworks/base" name="lbt/android_frameworks_base" remote="hybris" revision="hybris-10.1.3"/>
+
+  <include name="ha.xml"/>
+ 
+</manifest>
