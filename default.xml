@@ -363,7 +363,7 @@
   <remove-project path="system/vold" name="CyanogenMod/android_system_vold" />
   <remove-project path="tools/build" name="platform/tools/build" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
   <remove-project path="tools/motodev" name="platform/tools/motodev" remote="aosp" revision="refs/tags/android-4.2.2_r1" />
-<!--   <project path="vendor/cm" name="CyanogenMod/android_vendor_cm" /> --> <!-- matches re: ^vendor/.* -->
+  <remove-project path="vendor/cm" name="CyanogenMod/android_vendor_cm" /><!-- redefined later in this file -->
 <!--   <project path="vendor/qcom/opensource/v8" name="CyanogenMod/android_vendor_qcom_opensource_v8" /> --> <!-- matches re: ^vendor/.* -->
 <!--   <project path="vendor/tmobile/apps/ThemeChooser" name="CyanogenMod/themes-platform-vendor-tmobile-apps-ThemeChooser" /> --> <!-- matches re: ^vendor/.* -->
 <!--   <project path="vendor/tmobile/libs/com.tmobile.themes" name="CyanogenMod/android_vendor_tmobile_libs_com.tmobile.themes" /> --> <!-- matches re: ^vendor/.* -->
@@ -374,7 +374,7 @@
   <project path="hybris/hybris-boot" name="mer-hybris/hybris-boot" remote="hybris" revision="hybris-10.1"/>
   <project path="hybris/mer-kernel-check" name="mer-hybris/mer-kernel-check" remote="hybris" revision="master"/>
 
-<!-- Hybris overrides -->
+<!-- Hybris overrides (remove-project tags will be created automatically) -->
   <project path="build" name="mer-hybris/android_build" remote="hybris" revision="hybris-10.1" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
@@ -386,6 +386,7 @@
   <project path="external/protobuf" name="mer-hybris/android_external_protobuf" remote="hybris" revision="hybris-10.1"/>
   <project path="external/liblzf" name="mer-hybris/android_external_liblzf" remote="hybris" revision="hybris-10.1"/>
   <project path="frameworks/base" name="mer-hybris/android_frameworks_base" remote="hybris" revision="hybris-10.1"/>
+  <project path="vendor/cm" name="mer-hybris/android_vendor_cm" remote="hybris" revision="hybris-10.1"/>
 
   <include name="ha.xml"/>
  
