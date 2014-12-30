@@ -6,6 +6,13 @@
 # CyanogenMod manifests but is quite bulky. Please try to minimise it
 # for your device
 
-re: ^device/.*
-re: ^hardware/.*
+#re: ^device/.*
+# re: ^hardware/.*
 re: ^vendor/.*
+
+device/common
+
+hardware/libhardware
+hardware/libhardware_legacy
+hardware/msm7k
+hardware/samsung
