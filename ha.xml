@@ -20,6 +20,7 @@ Run "repo help manifest" for use of <remove-project> before adding
      You should specify a specific sha1/tag/branch in the revision
 -->
   <project path="rpm" name="mer-hybris/droid-hal-i9305" remote="hybris" revision="master"/>
+  <project path="hybris/droid-configs" name="mer-hybris/droid-configs-i9305" remote="hybris" revision="master"/>
 
 <!-- include any device specific <project> and <remove-project> elements here
 -->
